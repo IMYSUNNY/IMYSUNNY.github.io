@@ -140,6 +140,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 4rem;display:
 .proj-link:hover{gap:.7rem;}
 .proj-soon{border:1.5px dashed rgba(255,255,255,.09);background:transparent;color:var(--muted);border-radius:16px;padding:2rem;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;cursor:none;font-family:'Sora',sans-serif;transition:all .3s;}
 .proj-soon:hover{border-color:rgba(0,229,255,.22);color:var(--cyan);}
+.proj-img{width:100%;height:160px;object-fit:cover;border-radius:8px;border:1px solid var(--border);}
+.proj-links{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.3rem;}
+.proj-link-dl{display:inline-flex;align-items:center;gap:.4rem;color:var(--orange);font-size:.78rem;font-weight:700;text-decoration:none;cursor:none;transition:gap .2s;}
+.proj-link-dl:hover{gap:.7rem;}
 
 /* CERTS */
 .certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1rem;}
@@ -372,32 +376,57 @@ footer{padding:1.8rem 4rem;display:flex;justify-content:space-between;align-item
 
   <div class="proj-grid reveal">
 
+    <!-- =====================================================
+         NAIYA PROJECT ADD KARNA HO TO SIRF YEH KARO:
+         1. "PROJECT TEMPLATE" wala block copy karo
+         2. Paste karo is section mein (proj-soon se pehle)
+         3. Sirf YEH 5 cheezein badlo:
+            - PROJECT / 02  → number badlo
+            - Screenshot URL → apna screenshot link
+            - Project title
+            - Project description
+            - p-tag tools
+            - GitHub link (2 jagah)
+         4. Commit karo — ho gaya!
+         ===================================================== -->
+
     <!-- PROJECT 01 -->
     <div class="proj-card">
       <div class="proj-head">
         <span class="proj-num">PROJECT / 01</span>
         <span class="p-status s-done">Completed</span>
       </div>
+      <a href="https://github.com/IMYSUNNY/Excel-Sale-Dashboard" target="_blank" style="cursor:none;display:block;">
+        <img class="proj-img" src="https://raw.githubusercontent.com/IMYSUNNY/Excel-Sale-Dashboard/main/Screenshot%202026-03-18%20135529.png" alt="Excel Sales Dashboard">
+      </a>
       <div class="proj-title">Excel Sales Dashboard</div>
-      <div class="proj-desc">Built an interactive Sales Dashboard using Advanced Excel to analyze and visualize sales performance across regions, categories, payment modes, and months. Includes dynamic slicers, pivot charts, and KPI tracking.</div>
+      <div class="proj-desc">Built an interactive Sales Dashboard on real dataset using Advanced Excel — Pivot Tables, Charts, KPI tracking, and dynamic slicers for region, category, gender, payment mode, state, and month filters.</div>
       <div class="proj-tags">
         <span class="p-tag">Advanced Excel</span>
         <span class="p-tag">Pivot Tables</span>
-        <span class="p-tag">Data Visualization</span>
+        <span class="p-tag">KPI Tracking</span>
+        <span class="p-tag">Dynamic Slicers</span>
         <span class="p-tag">Dashboard</span>
       </div>
-      <!-- GitHub link ready hone par yeh uncomment karo: -->
-      <!-- <a href="https://github.com/IMYSUNNY/REPO-NAME" target="_blank" class="proj-link">View on GitHub →</a> -->
+      <div class="proj-links">
+        <a href="https://github.com/IMYSUNNY/Excel-Sale-Dashboard" target="_blank" class="proj-link" style="cursor:none;">View on GitHub →</a>
+        <a href="https://raw.githubusercontent.com/IMYSUNNY/Excel-Sale-Dashboard/main/EXCEL%20BOOK%205.xlsx" download class="proj-link-dl">⬇ Download Excel</a>
+      </div>
     </div>
     <!-- PROJECT 01 END -->
 
-    <!-- PROJECT TEMPLATE START — COPY THIS BLOCK FOR NEW PROJECTS
+    <!-- =====================================================
+    PROJECT TEMPLATE — COPY FROM HERE:
+
     <div class="proj-card">
       <div class="proj-head">
         <span class="proj-num">PROJECT / 02</span>
         <span class="p-status s-done">Completed</span>
       </div>
-      <div class="proj-title">APNA PROJECT NAAM YAHAN</div>
+      <a href="GITHUB_REPO_LINK" target="_blank" style="cursor:none;display:block;">
+        <img class="proj-img" src="SCREENSHOT_LINK" alt="Project Screenshot">
+      </a>
+      <div class="proj-title">APNA PROJECT NAAM</div>
       <div class="proj-desc">
         Kya banaya, kya problem solve ki, kya result aaya — 2-3 lines mein.
       </div>
@@ -406,9 +435,13 @@ footer{padding:1.8rem 4rem;display:flex;justify-content:space-between;align-item
         <span class="p-tag">Tool 2</span>
         <span class="p-tag">Tool 3</span>
       </div>
-      <a href="GITHUB_LINK" target="_blank" class="proj-link">View on GitHub →</a>
+      <div class="proj-links">
+        <a href="GITHUB_REPO_LINK" target="_blank" class="proj-link" style="cursor:none;">View on GitHub →</a>
+        <a href="FILE_DOWNLOAD_LINK" download class="proj-link-dl">⬇ Download File</a>
+      </div>
     </div>
-    PROJECT TEMPLATE END -->
+
+    COPY TILL HERE ===================================================== -->
 
     <button class="proj-soon">
       <span style="font-size:1.8rem;opacity:.35;">⚡</span>
