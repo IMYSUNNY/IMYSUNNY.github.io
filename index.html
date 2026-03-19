@@ -578,10 +578,18 @@ const navImg=document.getElementById('navImg');
 const navDp=document.getElementById('navDp');
 const photoPh=document.getElementById('photoPh');
 
+// Default photo from GitHub repo — sabko dikhegi
+const DEFAULT_PHOTO = 'WhatsApp Image 2026-03-17 at 1.36.51 PM.jpeg';
+
 function applyPhoto(src){
   heroPhoto.src=src; heroPhoto.style.display='block'; photoPh.style.display='none';
   navImg.src=src; navImg.style.display='block'; navDp.style.fontSize='0';
 }
+
+// Load default photo on page open
+applyPhoto(DEFAULT_PHOTO);
+
+// Photo upload button — agar locally change karna ho
 photoInput.addEventListener('change',function(){
   const file=this.files[0]; if(!file)return;
   const reader=new FileReader();
@@ -592,7 +600,7 @@ photoInput.addEventListener('change',function(){
   };
   reader.readAsDataURL(file);
 });
-// Load saved photo
+// Load locally saved photo if exists (overrides default)
 try{const s=localStorage.getItem('sy_photo');if(s)applyPhoto(s);}catch(e){}
 
 // ── SKILL BARS ──
