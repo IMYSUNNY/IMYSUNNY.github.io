@@ -326,6 +326,34 @@ footer{padding:1.8rem 4rem;display:flex;justify-content:space-between;align-item
   .hero-stats{flex-direction:column;align-items:center;}
 }
 
+/* ── MOBILE GLOBAL FIXES ── */
+html,body{
+  overflow-x:hidden;
+  max-width:100%;
+  -webkit-overflow-scrolling:touch;
+}
+*{box-sizing:border-box;}
+
+/* Disable heavy animations on touch devices for smooth scroll */
+@media(hover:none),(max-width:768px){
+  *{cursor:auto !important;}
+  .cursor-dot{display:none !important;}
+  /* Disable 3D tilt & parallax transforms on mobile */
+  .sk-card,.proj-rm-box,.cert-card,.stat-pill{transform:none !important;transition:border-color .2s,box-shadow .2s !important;}
+  /* Simplify wave animation on mobile */
+  .wave-divider .wp,.wave-divider.rev .wp{animation-duration:12s;}
+  /* Disable particle canvas on mobile to save CPU */
+  #hero-canvas{display:none;}
+  /* Disable glitch on mobile */
+  .glitch-wrap::before,.glitch-wrap::after{display:none;}
+  /* Simpler reveal animation */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
+  .reveal.on{opacity:1;transform:translateY(0);}
+  /* Fix right side gap */
+  section,div[id],.sw{max-width:100%;overflow-x:hidden;}
+  .hero-glow{display:none;}
+}
+
 /* ═══════════ BOLD ANIMATIONS PACK ═══════════ */
 
 /* ANIMATED WAVE DIVIDER */
@@ -509,8 +537,6 @@ footer{padding:1.8rem 4rem;display:flex;justify-content:space-between;align-item
   <img id="heroPhoto" src="" alt="" style="display:none">
 </section>
 
-<!-- WAVE -->
-<div class="wave-divider"><svg viewBox="0 0 1440 55" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path class="wp" d="M0,28 C180,55 360,0 540,28 C720,55 900,0 1080,28 C1260,55 1440,0 1440,28 L1440,55 L0,55 Z M1440,28 C1620,55 1800,0 1980,28 C2160,55 2340,0 2520,28 C2700,55 2880,0 2880,28 L2880,55 L1440,55 Z" fill="rgba(0,229,255,0.06)"/></svg></div>
 <!-- SKILLS -->
 <div class="sw" id="skills">
   <div class="sl">What I Use</div>
@@ -589,7 +615,6 @@ footer{padding:1.8rem 4rem;display:flex;justify-content:space-between;align-item
     </div>
   </div>
 </div>
-<div class="wave-divider rev"><svg viewBox="0 0 1440 55" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path class="wp" d="M0,28 C180,0 360,55 540,28 C720,0 900,55 1080,28 C1260,0 1440,55 1440,28 L1440,55 L0,55 Z M1440,28 C1620,0 1800,55 1980,28 C2160,0 2340,55 2520,28 C2700,0 2880,55 2880,28 L2880,55 L1440,55 Z" fill="rgba(124,58,237,0.06)"/></svg></div>
 <div class="sw" id="experience">
   <div class="sl">Where I've Worked</div>
   <h2 class="st reveal">Work Experience</h2>
@@ -608,7 +633,6 @@ footer{padding:1.8rem 4rem;display:flex;justify-content:space-between;align-item
 </div>
 
 <!-- PROJECTS -->
-<div class="wave-divider"><svg viewBox="0 0 1440 55" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path class="wp" d="M0,28 C180,55 360,0 540,28 C720,55 900,0 1080,28 C1260,55 1440,0 1440,28 L1440,55 L0,55 Z M1440,28 C1620,55 1800,0 1980,28 C2160,55 2340,0 2520,28 C2700,55 2880,0 2880,28 L2880,55 L1440,55 Z" fill="rgba(0,229,255,0.06)"/></svg></div>
 <div class="sw" id="projects">
   <div class="sl">What I've Built</div>
   <h2 class="st reveal">Projects <span style="font-size:.55em;color:var(--muted);font-weight:400;">— 16</span></h2>
@@ -813,7 +837,6 @@ footer{padding:1.8rem 4rem;display:flex;justify-content:space-between;align-item
     </div>
   </div>
 </div>
-<div class="wave-divider rev"><svg viewBox="0 0 1440 55" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path class="wp" d="M0,28 C180,0 360,55 540,28 C720,0 900,55 1080,28 C1260,0 1440,55 1440,28 L1440,55 L0,55 Z M1440,28 C1620,0 1800,55 1980,28 C2160,0 2340,55 2520,28 C2700,0 2880,55 2880,28 L2880,55 L1440,55 Z" fill="rgba(124,58,237,0.06)"/></svg></div>
 <div class="sw" id="certifications">
   <div class="sl">Credentials</div>
   <h2 class="st reveal">Certifications <span style="font-size:.55em;color:var(--muted);font-weight:400;">— 6</span></h2>
@@ -889,7 +912,6 @@ footer{padding:1.8rem 4rem;display:flex;justify-content:space-between;align-item
 </div>
 
 <!-- CAREER ROADMAP -->
-<div class="wave-divider"><svg viewBox="0 0 1440 55" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path class="wp" d="M0,28 C180,55 360,0 540,28 C720,55 900,0 1080,28 C1260,55 1440,0 1440,28 L1440,55 L0,55 Z M1440,28 C1620,55 1800,0 1980,28 C2160,55 2340,0 2520,28 C2700,55 2880,0 2880,28 L2880,55 L1440,55 Z" fill="rgba(255,120,0,0.05)"/></svg></div>
 <div id="roadmap">
   <div class="rm-wrap">
     <div class="sl">The Vision</div>
@@ -941,7 +963,6 @@ footer{padding:1.8rem 4rem;display:flex;justify-content:space-between;align-item
   </div>
 </div>
 
-<div class="wave-divider"><svg viewBox="0 0 1440 55" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path class="wp" d="M0,28 C180,55 360,0 540,28 C720,55 900,0 1080,28 C1260,55 1440,0 1440,28 L1440,55 L0,55 Z M1440,28 C1620,55 1800,0 1980,28 C2160,55 2340,0 2520,28 C2700,55 2880,0 2880,28 L2880,55 L1440,55 Z" fill="rgba(0,229,255,0.06)"/></svg></div>
 <!-- EDUCATION -->
 <div class="sw" id="education">
   <div class="sl">Academic Background</div>
@@ -1028,7 +1049,6 @@ footer{padding:1.8rem 4rem;display:flex;justify-content:space-between;align-item
   .cg-photo{width:180px;height:220px;}
 }
 </style>
-<div class="wave-divider rev"><svg viewBox="0 0 1440 55" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path class="wp" d="M0,28 C180,0 360,55 540,28 C720,0 900,55 1080,28 C1260,0 1440,55 1440,28 L1440,55 L0,55 Z M1440,28 C1620,0 1800,55 1980,28 C2160,0 2340,55 2520,28 C2700,0 2880,55 2880,28 L2880,55 L1440,55 Z" fill="rgba(124,58,237,0.06)"/></svg></div>
 <div id="contact-sec">
   <div class="sw">
     <div class="sl">Let's Connect</div>
@@ -1209,10 +1229,9 @@ window.addEventListener('scroll', () => {
   if(!el) return;
   const roles = [
     {text:'Data Analyst',          c1:'#00e5ff', c2:'#7c3aed'},
-    {text:'Excel Expert',          c1:'#00e676', c2:'#ffd600'},
     {text:'Power BI Developer',    c1:'#f97316', c2:'#ef4444'},
-    {text:'SQL for Data Analysis', c1:'#a78bfa', c2:'#06b6d4'},
     {text:'Python Developer',      c1:'#fbbf24', c2:'#10b981'},
+    {text:'SQL for Data Science',  c1:'#a78bfa', c2:'#06b6d4'},
     {text:'→ Next: Data Scientist',c1:'#ff6edb', c2:'#ffd600'},
   ];
   let ri=0, ci=0, deleting=false;
@@ -1220,12 +1239,12 @@ window.addEventListener('scroll', () => {
     const {text,c1,c2} = roles[ri];
     el.textContent = deleting ? text.slice(0,ci--) : text.slice(0,ci++);
     el.style.backgroundImage = `linear-gradient(90deg,${c1},${c2})`;
-    let delay = deleting ? 38 : 72;
-    if(!deleting && ci > text.length){ delay=1600; deleting=true; }
+    let delay = deleting ? 18 : 42;
+    if(!deleting && ci > text.length){ delay=1400; deleting=true; }
     else if(deleting && ci < 0){ deleting=false; ci=0; ri=(ri+1)%roles.length; delay=0; }
     setTimeout(tick, delay);
   }
-  setTimeout(tick, 2000);
+  setTimeout(tick, 1200);
 })();
 
 // ── CONFETTI BURST on HIRE ME ──
@@ -1264,7 +1283,8 @@ window.addEventListener('scroll', () => {
   });
 })();
 
-// ── MOUSE PARALLAX on HERO ──
+// ── MOUSE PARALLAX on HERO (desktop only) ──
+if(window.matchMedia('(hover:hover)').matches)
 (function(){
   const hero = document.getElementById('hero');
   if(!hero) return;
@@ -1420,7 +1440,8 @@ document.querySelectorAll('a,button,.sk-card,.proj-rm-box,.stat-pill,.cert-card'
   loop();
 })();
 
-// ── 3D TILT on CARDS ──
+// ── 3D TILT on CARDS (desktop only) ──
+if(window.matchMedia('(hover:hover)').matches){
 function tilt(sel, deg){
   document.querySelectorAll(sel).forEach(c => {
     c.addEventListener('mousemove', e => {
@@ -1439,8 +1460,10 @@ tilt('.sk-card', 13);
 tilt('.proj-rm-box', 9);
 tilt('.cert-card', 11);
 tilt('.stat-pill', 16);
+}
 
-// ── MAGNETIC BUTTONS ──
+// ── MAGNETIC BUTTONS (desktop only) ──
+if(window.matchMedia('(hover:hover)').matches){
 document.querySelectorAll('.btn-p,.btn-o').forEach(btn => {
   btn.addEventListener('mousemove', e => {
     const r=btn.getBoundingClientRect(), cx=r.left+r.width/2, cy=r.top+r.height/2;
@@ -1453,6 +1476,7 @@ document.querySelectorAll('.btn-p,.btn-o').forEach(btn => {
     btn.style.transition='transform .45s cubic-bezier(.23,1,.32,1)';
   });
 });
+}
 
 // ── UPDATE GLITCH data-text when typing animation finishes ──
 </script>
