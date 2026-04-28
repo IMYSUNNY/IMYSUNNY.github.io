@@ -64,25 +64,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 4rem;display:
 .hero-sq.mid:hover{border-color:var(--cyan);}
 
 /* HERO NAME ROW */
-.hero-name-row{position:relative;z-index:2;text-align:center;animation:fadeUp .6s .1s ease both;line-height:.85;padding:.8rem 0 0.2rem;}
-.hero-name-row .n-sunny{display:inline;font-size:clamp(2.4rem,7vw,5.5rem);font-weight:800;letter-spacing:.08em;color:var(--text);}
+.hero-name-row{position:relative;z-index:2;text-align:center;animation:fadeUp .6s .1s ease both;line-height:.85;padding:.8rem 0 0.2rem;white-space:nowrap;}
+.hero-name-row .n-sunny{display:inline;font-size:clamp(1.6rem,7vw,5.5rem);font-weight:800;letter-spacing:.08em;color:var(--text);}
 .hero-name-row .n-space{display:inline-block;width:.35em;}
-.hero-name-row .n-yadav{display:inline;font-size:clamp(2.4rem,7vw,5.5rem);font-weight:800;letter-spacing:.08em;background:linear-gradient(120deg,var(--cyan) 0%,var(--violet) 50%,var(--orange) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-name-row .n-yadav{display:inline;font-size:clamp(1.6rem,7vw,5.5rem);font-weight:800;letter-spacing:.08em;background:linear-gradient(120deg,var(--cyan) 0%,var(--violet) 50%,var(--orange) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 
 /* WELCOME TEXT */
-.hero-welcome-row{position:relative;z-index:2;text-align:center;animation:fadeUp .6s .15s ease both;padding:.1rem 0 .6rem;}
+.hero-welcome-row{position:relative;z-index:2;text-align:center;animation:fadeUp .6s .15s ease both;padding:.1rem 0 .6rem;-webkit-transform:translateZ(0);transform:translateZ(0);}
 .hero-welcome-row .w-text{font-size:clamp(1rem,2.5vw,1.7rem);font-weight:600;letter-spacing:.18em;color:var(--green);text-transform:uppercase;}
 .hero-welcome-row .w-cursor{display:inline-block;width:2px;height:1.1em;background:var(--cyan);vertical-align:middle;margin-left:2px;animation:blink .75s step-end infinite;}
 
-/* LEARNING LABEL */
-.sk-section-label{grid-column:1/-1;font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);padding:.6rem 0 .3rem;border-top:1px solid rgba(255,109,0,.18);margin-top:.5rem;}
+/* LEARNING LABEL — slider mein separator card */
+.sk-section-label{font-family:'JetBrains Mono',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:#c44a00;padding:.8rem .9rem;border:2px dashed rgba(255,109,0,.4);border-radius:18px;background:rgba(255,109,0,.06);min-width:140px;max-width:140px;flex-shrink:0;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.7;scroll-snap-align:start;}
 
 /* REST OF HERO CONTENT */
 .hero-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.2rem;max-width:680px;padding-top:.8rem;}
 .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,229,255,.06);border:1px solid rgba(0,229,255,.18);border-radius:100px;padding:.32rem .95rem;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--cyan);letter-spacing:.1em;text-transform:uppercase;animation:fadeUp .7s .18s ease both;}
 .htdot{width:5px;height:5px;background:var(--cyan);border-radius:50%;animation:blink 1.5s infinite;}
 .hero-roles{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;justify-content:center;animation:fadeUp .7s .22s ease both;}
-.role-tw-big{font-family:'JetBrains Mono',monospace;font-size:clamp(1.3rem,3.5vw,2rem);font-weight:800;letter-spacing:.04em;background:linear-gradient(90deg,var(--tw-c1,#00e5ff),var(--tw-c2,#7c3aed));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;transition:--tw-c1 .5s,--tw-c2 .5s;}
+.role-tw-big{font-family:'JetBrains Mono',monospace;font-size:clamp(1.3rem,3.5vw,2rem);font-weight:800;letter-spacing:.04em;background:linear-gradient(90deg,var(--tw-c1,#00e5ff),var(--tw-c2,#7c3aed));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;transition:--tw-c1 .5s,--tw-c2 .5s;will-change:contents;-webkit-transform:translateZ(0);transform:translateZ(0);}
 .role-cursor{font-size:clamp(1.3rem,3.5vw,2rem);font-weight:300;-webkit-text-fill-color:var(--cyan);color:var(--cyan);animation:blink .7s infinite;margin-left:2px;}
 .h-badge{padding:.4rem 1rem;background:rgba(0,229,255,.07);border:1px solid rgba(0,229,255,.18);border-radius:6px;font-size:.82rem;font-weight:600;color:var(--cyan);}
 .h-sep{color:var(--muted);}
@@ -117,20 +117,63 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 4rem;display:
 .sl{font-family:'JetBrains Mono',monospace;font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:.7rem;opacity:.7;}
 .st{font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:3rem;}
 
-/* SKILLS */
-.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;align-items:start;}
-.sk-card{padding:1.1rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:background .3s,border-color .3s,box-shadow .3s;position:relative;}
-.sk-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--violet));transform:scaleX(0);transform-origin:left;transition:transform .4s;}
-.sk-card:hover::after{transform:scaleX(1);}
-.sk-card:hover{background:#000;border-color:transparent;box-shadow:0 12px 40px rgba(0,0,0,.9);}
-.sk-icon{font-size:1.7rem;margin-bottom:.75rem;}
-.sk-name{font-size:.98rem;font-weight:700;margin-bottom:.7rem;}
-.sk-tags{display:flex;flex-wrap:wrap;gap:.32rem;}
-.sk-tag{padding:.18rem .58rem;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:100px;font-size:.62rem;color:var(--muted);}
-.sk-lvl{display:flex;align-items:center;gap:.5rem;margin-top:.9rem;}
-.sk-bar{flex:1;height:4px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;}
-.sk-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--cyan),var(--violet));width:0%;transition:width 1.4s cubic-bezier(.23,1,.32,1);}
-.sk-pct{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--muted);}
+/* SKILLS — horizontal colourful slider */
+.skills-grid{display:flex;flex-direction:row;gap:1rem;overflow-x:auto;padding-bottom:1rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;align-items:stretch;}
+.skills-grid::-webkit-scrollbar{height:3px;}
+.skills-grid::-webkit-scrollbar-track{background:var(--bg);}
+.skills-grid::-webkit-scrollbar-thumb{background:linear-gradient(90deg,#00e676,#00e5ff,#a78bfa,#ff6d00);border-radius:2px;}
+
+/* BASE CARD */
+.sk-card{
+  padding:1.2rem 1rem 1rem;
+  border-radius:18px;
+  border:2px solid transparent;
+  transition:transform .3s,box-shadow .3s,border-color .3s;
+  position:relative;overflow:hidden;
+  min-width:205px;max-width:205px;flex-shrink:0;
+  scroll-snap-align:start;color:#000 !important;
+  background:var(--sk-bg,#d4f7d4);
+}
+/* top accent bar */
+.sk-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:var(--sk-bar,linear-gradient(90deg,#00c853,#1b5e20));
+  border-radius:18px 18px 0 0;
+}
+/* shine sweep on hover */
+.sk-card::before{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+  transform:skewX(-18deg);transition:left .5s ease;pointer-events:none;z-index:1;
+}
+.sk-card:hover::before{left:140%;}
+.sk-card:hover{transform:translateY(-6px) scale(1.02);border-color:var(--sk-accent,#00c853);box-shadow:0 16px 36px var(--sk-shadow,rgba(0,200,83,.28));}
+
+.sk-icon{font-size:2rem;margin-bottom:.6rem;position:relative;z-index:2;display:block;}
+.sk-name{font-size:1rem;font-weight:800;margin-bottom:.65rem;color:#000 !important;position:relative;z-index:2;}
+.sk-tags{display:flex;flex-wrap:wrap;gap:.3rem;position:relative;z-index:2;}
+.sk-tag{padding:.2rem .6rem;background:var(--sk-tag-bg,rgba(0,0,0,.09));border:1px solid var(--sk-tag-border,rgba(0,0,0,.15));border-radius:100px;font-size:.6rem;font-weight:600;color:#111 !important;}
+.sk-lvl{display:flex;align-items:center;gap:.5rem;margin-top:.85rem;position:relative;z-index:2;}
+.sk-bar{flex:1;height:5px;background:rgba(0,0,0,.1);border-radius:3px;overflow:hidden;}
+.sk-fill{height:100%;border-radius:3px;background:var(--sk-fill,linear-gradient(90deg,#00c853,#1b5e20));width:0%;transition:width 1.4s cubic-bezier(.23,1,.32,1);}
+.sk-pct{font-family:'JetBrains Mono',monospace;font-size:.6rem;font-weight:700;color:#333 !important;}
+
+/* ── PER-CARD COLOUR THEMES ── */
+.sk-c1{--sk-bg:#d4f7d8;--sk-accent:#00a838;--sk-bar:linear-gradient(90deg,#00c853,#00e676);--sk-fill:linear-gradient(90deg,#00c853,#00e676);--sk-shadow:rgba(0,168,56,.3);--sk-tag-bg:rgba(0,168,56,.1);--sk-tag-border:rgba(0,168,56,.25);}
+.sk-c2{--sk-bg:#dbeeff;--sk-accent:#0277bd;--sk-bar:linear-gradient(90deg,#0288d1,#00b0ff);--sk-fill:linear-gradient(90deg,#0288d1,#00b0ff);--sk-shadow:rgba(2,119,189,.3);--sk-tag-bg:rgba(2,119,189,.1);--sk-tag-border:rgba(2,119,189,.25);}
+.sk-c3{--sk-bg:#fff8d6;--sk-accent:#f9a825;--sk-bar:linear-gradient(90deg,#f9a825,#ffd600);--sk-fill:linear-gradient(90deg,#f9a825,#ffd600);--sk-shadow:rgba(249,168,37,.35);--sk-tag-bg:rgba(249,168,37,.12);--sk-tag-border:rgba(249,168,37,.3);}
+.sk-c4{--sk-bg:#ede7ff;--sk-accent:#6d28d9;--sk-bar:linear-gradient(90deg,#7c3aed,#a78bfa);--sk-fill:linear-gradient(90deg,#7c3aed,#a78bfa);--sk-shadow:rgba(109,40,217,.28);--sk-tag-bg:rgba(109,40,217,.1);--sk-tag-border:rgba(109,40,217,.25);}
+.sk-c5{--sk-bg:#fde8f0;--sk-accent:#c2185b;--sk-bar:linear-gradient(90deg,#e91e63,#ff80ab);--sk-fill:linear-gradient(90deg,#e91e63,#ff80ab);--sk-shadow:rgba(194,24,91,.28);--sk-tag-bg:rgba(194,24,91,.1);--sk-tag-border:rgba(194,24,91,.25);}
+.sk-c6{--sk-bg:#dcfaf5;--sk-accent:#00695c;--sk-bar:linear-gradient(90deg,#00897b,#00e5cc);--sk-fill:linear-gradient(90deg,#00897b,#00e5cc);--sk-shadow:rgba(0,105,92,.28);--sk-tag-bg:rgba(0,105,92,.1);--sk-tag-border:rgba(0,105,92,.25);}
+.sk-c7{--sk-bg:#fff0e0;--sk-accent:#e65100;--sk-bar:linear-gradient(90deg,#ff6d00,#ffab40);--sk-fill:linear-gradient(90deg,#ff6d00,#ffab40);--sk-shadow:rgba(230,81,0,.28);--sk-tag-bg:rgba(230,81,0,.1);--sk-tag-border:rgba(230,81,0,.25);}
+.sk-c8{--sk-bg:#eae6ff;--sk-accent:#4527a0;--sk-bar:linear-gradient(90deg,#512da8,#9c6fe4);--sk-fill:linear-gradient(90deg,#512da8,#9c6fe4);--sk-shadow:rgba(69,39,160,.28);--sk-tag-bg:rgba(69,39,160,.1);--sk-tag-border:rgba(69,39,160,.25);}
+.sk-c9{--sk-bg:#fffacd;--sk-accent:#e65100;--sk-bar:linear-gradient(90deg,#ff8f00,#ffd600);--sk-fill:linear-gradient(90deg,#ff8f00,#ffd600);--sk-shadow:rgba(230,81,0,.3);--sk-tag-bg:rgba(255,143,0,.12);--sk-tag-border:rgba(255,143,0,.3);}
+/* Learning cards — muted but colourful */
+.sk-c10{--sk-bg:#fde8e8;--sk-accent:#b71c1c;--sk-bar:linear-gradient(90deg,#e53935,#ff8a80);--sk-fill:linear-gradient(90deg,#e53935,#ff8a80);--sk-shadow:rgba(183,28,28,.25);--sk-tag-bg:rgba(183,28,28,.1);--sk-tag-border:rgba(183,28,28,.22);}
+.sk-c11{--sk-bg:#e8f0fe;--sk-accent:#283593;--sk-bar:linear-gradient(90deg,#3949ab,#82b1ff);--sk-fill:linear-gradient(90deg,#3949ab,#82b1ff);--sk-shadow:rgba(40,53,147,.25);--sk-tag-bg:rgba(40,53,147,.1);--sk-tag-border:rgba(40,53,147,.22);}
+.sk-c12{--sk-bg:#f0e6ff;--sk-accent:#6a0dad;--sk-bar:linear-gradient(90deg,#7b1fa2,#ce93d8);--sk-fill:linear-gradient(90deg,#7b1fa2,#ce93d8);--sk-shadow:rgba(106,13,173,.25);--sk-tag-bg:rgba(106,13,173,.1);--sk-tag-border:rgba(106,13,173,.22);}
+.sk-c13{--sk-bg:#e0e8ff;--sk-accent:#1a237e;--sk-bar:linear-gradient(90deg,#1565c0,#90caf9);--sk-fill:linear-gradient(90deg,#1565c0,#90caf9);--sk-shadow:rgba(26,35,126,.25);--sk-tag-bg:rgba(26,35,126,.1);--sk-tag-border:rgba(26,35,126,.22);}
+
 
 /* EXPERIENCE */
 .exp-card{padding:2.4rem;background:var(--card);border:1px solid var(--border);border-radius:16px;position:relative;overflow:hidden;}
@@ -322,7 +365,7 @@ footer{padding:1.8rem 4rem;display:flex;justify-content:space-between;align-item
   .hero-sq{width:90px;height:90px;}
   .hero-sq.mid{width:110px;height:110px;}
   .hero-photos-row{gap:8px;}
-  .skills-grid{grid-template-columns:repeat(4,1fr);}
+  .skills-grid{gap:.8rem;}
   .hero-stats{flex-direction:column;align-items:center;}
 }
 
@@ -339,7 +382,10 @@ html,body{
   *{cursor:auto !important;}
   .cursor-dot{display:none !important;}
   /* Disable 3D tilt & parallax transforms on mobile */
-  .sk-card,.proj-rm-box,.cert-card,.stat-pill{transform:none !important;transition:border-color .2s,box-shadow .2s !important;}
+  .proj-rm-box,.cert-card,.stat-pill{transform:none !important;transition:border-color .2s,box-shadow .2s !important;}
+  /* sk-card on mobile — override only non-transform properties */
+  .sk-card{transform:none !important;transition:border-color .2s,box-shadow .2s !important;}
+  .sk-card::before{display:none;}
   /* Simplify wave animation on mobile */
   .wave-divider .wp,.wave-divider.rev .wp{animation-duration:12s;}
   /* Disable particle canvas on mobile to save CPU */
@@ -352,6 +398,8 @@ html,body{
   /* Fix right side gap */
   section,div[id],.sw{max-width:100%;overflow-x:hidden;}
   .hero-glow{display:none;}
+  /* GPU layer hints for smooth scroll */
+  .skills-grid,.proj-rm-wrap,.certs-grid{-webkit-transform:translateZ(0);transform:translateZ(0);will-change:scroll-position;}
 }
 
 /* ═══════════ BOLD ANIMATIONS PACK ═══════════ */
@@ -379,8 +427,8 @@ html,body{
 .hire-words{font-family:'Sora',sans-serif;font-size:clamp(1rem,2.5vw,1.3rem);font-weight:800;letter-spacing:.04em;background:linear-gradient(90deg,#ff6a00,#ff9900,#ffcc00,#ff6a00);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:bhagvaShine 2.5s ease infinite,textGlow 2s ease infinite;}
 .hire-lightning{font-size:1.2rem;animation:lightningPulse 1s ease infinite;}
 .hire-lightning:last-child{animation-delay:.5s;}
-@keyframes hireBtnPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,120,0,.5),0 6px 24px rgba(255,90,0,.3);}50%{box-shadow:0 0 0 8px rgba(255,120,0,.0),0 6px 28px rgba(255,90,0,.5);}}
-.hire-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2.2rem;background:linear-gradient(135deg,#cc5500,#e07800);color:#000;font-family:'Sora',sans-serif;font-size:.92rem;font-weight:800;border-radius:50px;text-decoration:none;letter-spacing:.04em;animation:hireBtnPulse 2s ease infinite;transition:transform .25s,filter .25s;}
+@keyframes hireBtnPulse{0%,100%{box-shadow:0 0 0 0 rgba(0,200,83,.5),0 6px 24px rgba(0,230,118,.3);}50%{box-shadow:0 0 0 10px rgba(0,200,83,.0),0 6px 28px rgba(0,230,118,.6);}}
+.hire-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2.2rem;background:linear-gradient(135deg,#00c853,#00e676,#69ff47,#00c853);background-size:200% 200%;color:#000;font-family:'Sora',sans-serif;font-size:.92rem;font-weight:800;border-radius:50px;text-decoration:none;letter-spacing:.04em;animation:hireBtnPulse 2s ease infinite,bhagvaShine 2.5s ease infinite;transition:transform .25s,filter .25s;}
 .hire-btn:hover{transform:translateY(-3px) scale(1.04);filter:brightness(1.1);}
 .hire-words{-webkit-text-fill-color:#000;color:#000;background:none;font-weight:800;}
 
@@ -410,14 +458,8 @@ html,body{
 .glitch-wrap::before{animation:glitch1 7s infinite;left:0;}
 .glitch-wrap::after{animation:glitch2 7s infinite .6s;left:0;}
 
-/* SHIMMER BORDER on skill cards */
+/* SHIMMER BORDER on skill cards — removed, shine sweep handles it now */
 @keyframes shimmerBorder{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.sk-card{position:relative;}
-.sk-card::before{content:'';position:absolute;inset:-2px;border-radius:15px;background:linear-gradient(90deg,#00e676,#69ff47,#00e5ff,#00e676);background-size:300% 100%;z-index:-1;opacity:0;transition:opacity .35s;animation:shimmerBorder 2.5s ease infinite;}
-.sk-card:hover::before{opacity:1;}
-.sk-card:hover{border-color:rgba(0,229,255,.18);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.35);color:#000;}
-.sk-card:hover .sk-tag{color:#000;border-color:rgba(0,0,0,.2);}
-.sk-card:hover .sk-pct{color:#000;}
 
 /* NEON GLOW on section headings hover */
 .st{transition:text-shadow .4s;}
@@ -542,73 +584,78 @@ html,body{
   <div class="sl">What I Use</div>
   <h2 class="st reveal">Skills & Tools</h2>
   <div class="skills-grid reveal">
-    <div class="sk-card reveal">
+    <div class="sk-card sk-c1 reveal">
       <div class="sk-icon">📊</div><div class="sk-name">Excel</div>
       <div class="sk-tags"><span class="sk-tag">Lookups</span><span class="sk-tag">Power Query</span><span class="sk-tag">Pivot Tables</span><span class="sk-tag">Data Cleaning</span><span class="sk-tag">Dashboards</span></div>
       <div class="sk-lvl"><div class="sk-bar"><div class="sk-fill" data-w="88"></div></div><span class="sk-pct">88%</span></div>
     </div>
-    <div class="sk-card reveal">
+    <div class="sk-card sk-c2 reveal">
       <div class="sk-icon">🗄️</div><div class="sk-name">SQL</div>
       <div class="sk-tags"><span class="sk-tag">Queries</span><span class="sk-tag">Joins</span><span class="sk-tag">Group By</span><span class="sk-tag">Subqueries</span><span class="sk-tag">Aggregates</span></div>
       <div class="sk-lvl"><div class="sk-bar"><div class="sk-fill" data-w="72"></div></div><span class="sk-pct">72%</span></div>
     </div>
-    <div class="sk-card reveal">
+    <div class="sk-card sk-c3 reveal">
       <div class="sk-icon">📈</div><div class="sk-name">Power BI</div>
       <div class="sk-tags"><span class="sk-tag">Dashboards</span><span class="sk-tag">Data Viz</span><span class="sk-tag">Reports</span></div>
       <div class="sk-lvl"><div class="sk-bar"><div class="sk-fill" data-w="65"></div></div><span class="sk-pct">65%</span></div>
     </div>
-    <div class="sk-card reveal">
+    <div class="sk-card sk-c4 reveal">
       <div class="sk-icon">🐍</div><div class="sk-name">Python</div>
       <div class="sk-tags"><span class="sk-tag">Pandas</span><span class="sk-tag">NumPy</span><span class="sk-tag">Data Analysis</span></div>
       <div class="sk-lvl"><div class="sk-bar"><div class="sk-fill" data-w="60"></div></div><span class="sk-pct">60%</span></div>
     </div>
-    <div class="sk-card reveal">
+    <div class="sk-card sk-c5 reveal">
       <div class="sk-icon">📐</div><div class="sk-name">Statistics</div>
       <div class="sk-tags"><span class="sk-tag">Descriptive</span><span class="sk-tag">Hypothesis Testing</span><span class="sk-tag">Probability</span></div>
       <div class="sk-lvl"><div class="sk-bar"><div class="sk-fill" data-w="68"></div></div><span class="sk-pct">68%</span></div>
     </div>
-    <div class="sk-card reveal">
+    <div class="sk-card sk-c6 reveal">
       <div class="sk-icon">🧹</div><div class="sk-name">Data Cleaning</div>
       <div class="sk-tags"><span class="sk-tag">Missing Values</span><span class="sk-tag">Deduplication</span><span class="sk-tag">Standardization</span><span class="sk-tag">Outlier Detection</span></div>
       <div class="sk-lvl"><div class="sk-bar"><div class="sk-fill" data-w="82"></div></div><span class="sk-pct">82%</span></div>
     </div>
-    <div class="sk-card reveal">
+    <div class="sk-card sk-c7 reveal">
       <div class="sk-icon">📉</div><div class="sk-name">Data Visualization</div>
       <div class="sk-tags"><span class="sk-tag">Charts & Graphs</span><span class="sk-tag">Dashboards</span><span class="sk-tag">Storytelling</span><span class="sk-tag">Power BI</span></div>
       <div class="sk-lvl"><div class="sk-bar"><div class="sk-fill" data-w="70"></div></div><span class="sk-pct">70%</span></div>
     </div>
-    <div class="sk-card reveal">
+    <div class="sk-card sk-c8 reveal">
       <div class="sk-icon">🤖</div><div class="sk-name">AI Tools</div>
       <div class="sk-tags"><span class="sk-tag">Claude</span><span class="sk-tag">ChatGPT</span><span class="sk-tag">Grok</span><span class="sk-tag">Perplexity</span><span class="sk-tag">Blackbox AI</span></div>
       <div class="sk-lvl"><div class="sk-bar"><div class="sk-fill" data-w="78"></div></div><span class="sk-pct">78%</span></div>
+    </div>
+    <div class="sk-card sk-c9 reveal">
+      <div class="sk-icon">📊</div><div class="sk-name">Excel Expert</div>
+      <div class="sk-tags"><span class="sk-tag">Advanced Formulas</span><span class="sk-tag">Pivot Tables</span><span class="sk-tag">Power Query</span><span class="sk-tag">Macros</span><span class="sk-tag">Dashboards</span></div>
+      <div class="sk-lvl"><div class="sk-bar"><div class="sk-fill" data-w="90"></div></div><span class="sk-pct">90%</span></div>
     </div>
 
     <!-- LEARNING SECTION LABEL -->
     <div class="sk-section-label">⚡ Currently Learning — In Progress</div>
 
     <!-- TABLEAU -->
-    <div class="sk-card reveal">
+    <div class="sk-card sk-c10 reveal">
       <div class="sk-icon">📊</div><div class="sk-name">Tableau</div>
       <div class="sk-tags"><span class="sk-tag">Visual Analytics</span><span class="sk-tag">Dashboards</span><span class="sk-tag">Data Stories</span></div>
       <div class="sk-lvl"><div class="sk-bar"><div class="sk-fill" data-w="55"></div></div><span class="sk-pct">55%</span></div>
     </div>
 
     <!-- C LANGUAGE -->
-    <div class="sk-card reveal">
+    <div class="sk-card sk-c11 reveal">
       <div class="sk-icon">💻</div><div class="sk-name">C Language</div>
       <div class="sk-tags"><span class="sk-tag">Syntax</span><span class="sk-tag">Pointers</span><span class="sk-tag">Data Structures</span><span class="sk-tag">Memory Mgmt</span></div>
       <div class="sk-lvl"><div class="sk-bar"><div class="sk-fill" data-w="20"></div></div><span class="sk-pct">Learning</span></div>
     </div>
 
     <!-- MACHINE LEARNING -->
-    <div class="sk-card reveal">
+    <div class="sk-card sk-c12 reveal">
       <div class="sk-icon">🧠</div><div class="sk-name">Machine Learning</div>
       <div class="sk-tags"><span class="sk-tag">Scikit-Learn</span><span class="sk-tag">Regression</span><span class="sk-tag">Classification</span><span class="sk-tag">Model Eval</span></div>
       <div class="sk-lvl"><div class="sk-bar"><div class="sk-fill" data-w="15"></div></div><span class="sk-pct">Learning</span></div>
     </div>
 
     <!-- DEEP LEARNING -->
-    <div class="sk-card reveal">
+    <div class="sk-card sk-c13 reveal">
       <div class="sk-icon">🤖</div><div class="sk-name">Deep Learning</div>
       <div class="sk-tags"><span class="sk-tag">Neural Networks</span><span class="sk-tag">TensorFlow</span><span class="sk-tag">CNNs</span><span class="sk-tag">NLP</span></div>
       <div class="sk-lvl"><div class="sk-bar"><div class="sk-fill" data-w="10"></div></div><span class="sk-pct">Learning</span></div>
@@ -1232,15 +1279,17 @@ window.addEventListener('scroll', () => {
     {text:'Power BI Developer',    c1:'#f97316', c2:'#ef4444'},
     {text:'Python Developer',      c1:'#fbbf24', c2:'#10b981'},
     {text:'SQL for Data Science',  c1:'#a78bfa', c2:'#06b6d4'},
+    {text:'Excel Expert',          c1:'#00e676', c2:'#ffd600'},
     {text:'→ Next: Data Scientist',c1:'#ff6edb', c2:'#ffd600'},
   ];
   let ri=0, ci=0, deleting=false;
+  const isMobile = window.innerWidth <= 768;
   function tick(){
     const {text,c1,c2} = roles[ri];
     el.textContent = deleting ? text.slice(0,ci--) : text.slice(0,ci++);
     el.style.backgroundImage = `linear-gradient(90deg,${c1},${c2})`;
-    let delay = deleting ? 18 : 42;
-    if(!deleting && ci > text.length){ delay=1400; deleting=true; }
+    let delay = deleting ? (isMobile?25:18) : (isMobile?55:42);
+    if(!deleting && ci > text.length){ delay=1600; deleting=true; }
     else if(deleting && ci < 0){ deleting=false; ci=0; ri=(ri+1)%roles.length; delay=0; }
     setTimeout(tick, delay);
   }
