@@ -67,8 +67,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 4rem;display:
 .nav-links{display:flex;gap:2rem;list-style:none;}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;transition:color .25s;}
 .nav-links a:hover,.nav-links a.act{color:var(--cyan);}
-.nav-pill{font-family:'JetBrains Mono',monospace;font-size:.62rem;padding:.28rem .8rem;background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.18);border-radius:100px;color:var(--green);display:flex;align-items:center;gap:.4rem;}
-.nav-pill::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.1}}
 .role-cursor{animation:blink .7s infinite;color:var(--cyan);font-weight:300;}
 
@@ -465,6 +463,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 4rem;display:
 /* Per-platform hover colors */
 .clink-email:hover{border-color:rgba(234,67,53,.4);box-shadow:0 8px 28px rgba(234,67,53,.15);}
 .clink-linkedin:hover{border-color:rgba(10,102,194,.5);box-shadow:0 8px 28px rgba(10,102,194,.18);}
+.clink-tracker:hover{border-color:rgba(124,58,237,.4);box-shadow:0 8px 28px rgba(124,58,237,.18);}
 .clink-github:hover{border-color:rgba(255,255,255,.2);box-shadow:0 8px 28px rgba(255,255,255,.08);}
 .clink-instagram:hover{border-color:rgba(225,48,108,.4);box-shadow:0 8px 28px rgba(225,48,108,.15);}
 .clink-whatsapp:hover{border-color:rgba(37,211,102,.4);box-shadow:0 8px 28px rgba(37,211,102,.15);}
@@ -491,7 +490,7 @@ footer{padding:1.8rem 4rem;display:flex;justify-content:space-between;align-item
 /* MOBILE */
 @media(max-width:960px){
   nav{padding:1rem 1.5rem;}
-  .nav-links,.nav-pill{display:none;}
+  .nav-links{display:none;}
   #hero{padding:6rem 1.5rem 3rem;gap:0;}
   .hero-sq{width:90px;height:90px;flex-shrink:0;}
   .hero-sq.mid{width:110px;height:110px;flex-shrink:0;}
@@ -514,6 +513,10 @@ footer{padding:1.8rem 4rem;display:flex;justify-content:space-between;align-item
   .edu-strip{flex-direction:column;}
   .hero-stats{gap:.7rem;}
   .stat-pill{padding:.6rem .9rem;}
+}
+@media(max-width:340px){
+  nav{padding:.8rem 1rem;}
+  .logo-name{font-size:.7rem;}
 }
 @media(max-width:600px){
   .hero-sq{width:75px;height:75px;flex-shrink:0;}
@@ -579,7 +582,6 @@ html,body{
   /* Hero grid bg lighter on mobile */
   .hero-grid-bg{opacity:.4;}
   /* Disable neon flicker on mobile — saves battery */
-  .nav-pill{animation:blink 1.5s infinite;}
   /* Simpler hero sq hover on mobile */
   .hero-sq:hover,.hero-sq.mid:hover{transform:none;box-shadow:none;}
   /* Content-visibility for off-screen sections — HUGE speed boost */
@@ -676,9 +678,6 @@ html,body{
 .st{transition:text-shadow .4s;}
 .st:hover{text-shadow:0 0 25px rgba(0,229,255,.25),0 0 60px rgba(0,229,255,.08);}
 
-/* NEON FLICKER on nav pill */
-@keyframes neonFlicker{0%,18%,20%,54%,56%,100%{box-shadow:0 0 10px rgba(0,230,118,.3),0 0 24px rgba(0,230,118,.15),inset 0 0 8px rgba(0,230,118,.08);}19%,55%{box-shadow:none;}}
-.nav-pill{animation:blink 1.5s infinite,neonFlicker 7s infinite 3s;}
 
 /* STAT PILL HOVER */
 .stat-pill{transition:all .3s cubic-bezier(.23,1,.32,1);}
@@ -729,7 +728,6 @@ html,body{
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contact-sec">Contact</a></li>
   </ul>
-  <div class="nav-pill">Open to Work</div>
 </nav>
 
 <!-- HERO -->
@@ -1407,18 +1405,18 @@ html,body{
           <span class="clink-text">ysunny.work@gmail.com</span>
           <span class="clink-arrow">→</span>
         </a>
+        <a href="https://wa.me/919026108768" target="_blank" rel="noopener noreferrer" class="clink clink-whatsapp">
+          <span class="clink-logo">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#25D366"/><path fill="#fff" d="M12 4a8 8 0 00-6.9 12L4 20l4.1-1.1A8 8 0 1012 4zm4.1 11.1c-.2.5-1 1-1.4 1-.4.1-.8.1-1.2 0-1.5-.5-3.8-2.8-4.2-4.2-.2-.7.1-1.4.4-1.7.1-.1.3-.2.5-.2h.4c.1 0 .3.1.4.4l.5 1.2c.1.2 0 .4-.1.6l-.3.4c.3.5.7 1 1.1 1.4.4.4.9.8 1.4 1l.4-.3c.2-.2.4-.2.6-.1l1.2.5c.3.1.4.3.4.4v.4c0 .1-.1.2-.1.2z"/></svg>
+          </span>
+          <span class="clink-text">WhatsApp — +91 9026108768</span>
+          <span class="clink-arrow">→</span>
+        </a>
         <a href="https://www.linkedin.com/in/sunny-yadav-272947259" target="_blank" rel="noopener noreferrer" class="clink clink-linkedin">
           <span class="clink-logo">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M7 9h2v8H7zm1-3a1.1 1.1 0 110 2.2A1.1 1.1 0 018 6zm4 3h2v1.1C14.4 9.4 15 9 16 9c2 0 2 1.5 2 3v5h-2v-4.5c0-.8-.1-1.5-1-1.5s-1 .7-1 1.5V17h-2V9z" fill="#fff"/></svg>
           </span>
           <span class="clink-text">LinkedIn — Sunny Yadav</span>
-          <span class="clink-arrow">→</span>
-        </a>
-        <a href="https://github.com/IMYSUNNY" target="_blank" rel="noopener noreferrer" class="clink clink-github">
-          <span class="clink-logo">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#24292e"/><path fill="#fff" d="M12 2.5A9.5 9.5 0 002.5 12c0 4.2 2.7 7.7 6.5 9 .5.1.7-.2.7-.4v-1.4c-2.7.6-3.2-1.3-3.2-1.3-.4-1.1-1-1.4-1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.5-1.1-4.5-4.8 0-1 .4-1.9 1-2.6-.1-.3-.5-1.2.1-2.5 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .6 1.3.2 2.2.1 2.5.6.7 1 1.6 1 2.6 0 3.7-2.3 4.5-4.5 4.8.4.3.7 1 .7 2v2.9c0 .2.2.5.7.4A9.5 9.5 0 0021.5 12 9.5 9.5 0 0012 2.5z"/></svg>
-          </span>
-          <span class="clink-text">GitHub — IMYSUNNY</span>
           <span class="clink-arrow">→</span>
         </a>
         <a href="https://www.instagram.com/im.ysunny" target="_blank" rel="noopener noreferrer" class="clink clink-instagram">
@@ -1428,11 +1426,16 @@ html,body{
           <span class="clink-text">Instagram — im.ysunny</span>
           <span class="clink-arrow">→</span>
         </a>
-        <a href="https://wa.me/919026108768" target="_blank" rel="noopener noreferrer" class="clink clink-whatsapp">
+        <a href="https://imysunny.github.io/Track-My-Job/" target="_blank" rel="noopener noreferrer" class="clink clink-tracker">
+          <span class="clink-logo" style="background:linear-gradient(135deg,#00e5ff,#7c3aed,#ff6d00);border-radius:6px;display:flex;align-items:center;justify-content:center;width:34px;height:34px;flex-shrink:0;font-size:1.05rem;">🎯</span>
+          <span class="clink-text">Track My Job — My Job Tracker App</span>
+          <span class="clink-arrow">→</span>
+        </a>
+        <a href="https://github.com/IMYSUNNY" target="_blank" rel="noopener noreferrer" class="clink clink-github">
           <span class="clink-logo">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#25D366"/><path fill="#fff" d="M12 4a8 8 0 00-6.9 12L4 20l4.1-1.1A8 8 0 1012 4zm4.1 11.1c-.2.5-1 1-1.4 1-.4.1-.8.1-1.2 0-1.5-.5-3.8-2.8-4.2-4.2-.2-.7.1-1.4.4-1.7.1-.1.3-.2.5-.2h.4c.1 0 .3.1.4.4l.5 1.2c.1.2 0 .4-.1.6l-.3.4c.3.5.7 1 1.1 1.4.4.4.9.8 1.4 1l.4-.3c.2-.2.4-.2.6-.1l1.2.5c.3.1.4.3.4.4v.4c0 .1-.1.2-.1.2z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#24292e"/><path fill="#fff" d="M12 2.5A9.5 9.5 0 002.5 12c0 4.2 2.7 7.7 6.5 9 .5.1.7-.2.7-.4v-1.4c-2.7.6-3.2-1.3-3.2-1.3-.4-1.1-1-1.4-1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.5-1.1-4.5-4.8 0-1 .4-1.9 1-2.6-.1-.3-.5-1.2.1-2.5 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .6 1.3.2 2.2.1 2.5.6.7 1 1.6 1 2.6 0 3.7-2.3 4.5-4.5 4.8.4.3.7 1 .7 2v2.9c0 .2.2.5.7.4A9.5 9.5 0 0021.5 12 9.5 9.5 0 0012 2.5z"/></svg>
           </span>
-          <span class="clink-text">WhatsApp — +91 9026108768</span>
+          <span class="clink-text">GitHub — IMYSUNNY</span>
           <span class="clink-arrow">→</span>
         </a>
       </div>
